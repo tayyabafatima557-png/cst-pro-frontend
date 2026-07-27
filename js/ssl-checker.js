@@ -11,7 +11,7 @@
   const redirectCard = document.getElementById('redirectCard');
   const redirectList = document.getElementById('redirectList');
 
-  const BACKEND = 'http://localhost:4000';
+  
 
   function row(label, value) {
     return `
@@ -34,8 +34,8 @@
 
     try {
       const [tlsRes, headersRes] = await Promise.all([
-        fetch(`${BACKEND}/tls-info?host=${encodeURIComponent(hostOnly)}`),
-        fetch(`${BACKEND}/security-headers?url=${encodeURIComponent(target)}`)
+        fetch(`${BACKEND_URL}/tls-info?host=${encodeURIComponent(hostOnly)}`),
+        fetch(`${BACKEND_URL}/security-headers?url=${encodeURIComponent(target)}`)
       ]);
 
       const tlsData = await tlsRes.json();
