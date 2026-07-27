@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 10</p>
+    <h1 class="glow-text tool-title">JSON Formatter</h1>
+    <p class="tool-subtitle">Beautify, validate, and minify JSON — processed entirely in your browser.</p>
+  </div>
+
+  <div class="tool-panel-grid">
+    <section class="glass-card" style="padding:1.75rem;">
+      <p class="eyebrow" style="margin-bottom:0.6rem;">Input</p>
+      <textarea id="jsonInput" rows="14" placeholder='{"example": "paste your JSON here"}'
+        style="width:100%;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);font-size:0.85rem;padding:0.85rem;resize:vertical;"></textarea>
+      <div style="display:flex;gap:0.6rem;margin-top:1rem;">
+        <button class="btn-cyber" id="beautifyBtn">Beautify</button>
+        <button class="btn-cyber" id="minifyBtn">Minify</button>
+      </div>
+    </section>
+
+    <section class="glass-card" style="padding:1.75rem;">
+      <p class="eyebrow" style="margin-bottom:0.6rem;">Output</p>
+      <pre id="jsonOutput" style="width:100%;min-height:340px;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--cyan);font-family:var(--font-mono);font-size:0.85rem;padding:0.85rem;overflow:auto;white-space:pre-wrap;">Result will appear here…</pre>
+      <p id="jsonStatus" style="margin-top:0.8rem;font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim);"></p>
+    </section>
+  </div>
+</main>
+
+<script src="../js/json-formatter.js"></script>
+</body>
+</html>

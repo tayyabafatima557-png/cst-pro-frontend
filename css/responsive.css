@@ -1,0 +1,80 @@
+/* ============================================
+   RESPONSIVE.CSS
+   Breakpoints: >1024 desktop, 768-1024 tablet,
+   <768 mobile, <480 small phone
+   ============================================ */
+
+/* ---------- Tablet (<=1024px) ---------- */
+@media (max-width: 1024px) {
+  .hero-card { padding: 45px; }
+  .hero h1 { font-size: 46px; }
+
+  #tools, .stats, .developer, .about, .footer {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+/* ---------- Mobile (<=768px) ---------- */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 16px 5%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar ul {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-card { padding: 30px 20px; }
+
+  .hero h1 { font-size: 34px; }
+  .hero h2 { font-size: 18px; }
+  .hero p { font-size: 16px; }
+
+  .start-btn { padding: 13px 30px; }
+
+  .section-title { font-size: 30px; }
+
+  #tools, .stats {
+    padding: 60px 6%;
+    grid-template-columns: 1fr;
+  }
+
+  .tool-grid { grid-template-columns: 1fr; }
+
+  .developer-card { padding: 30px 20px; }
+  .developer h2 { font-size: 28px; }
+
+  .footer { padding: 45px 6%; }
+  .footer-links { gap: 20px; }
+}
+
+/* ---------- Small phones (<=480px) ---------- */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 28px; }
+  .hero-logo { font-size: 52px; }
+
+  .logo { font-size: 19px; }
+
+  .tool-card { padding: 26px 20px; }
+  .tool-icon { font-size: 40px; }
+
+  .stat-card h2 { font-size: 36px; }
+
+  .developer-avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 42px;
+  }
+}

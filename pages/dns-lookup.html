@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNS Lookup — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 05</p>
+    <h1 class="glow-text tool-title">DNS Lookup</h1>
+    <p class="tool-subtitle">View A, AAAA, MX, TXT, and NS records for any domain, via DNS-over-HTTPS.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <div class="output-row">
+      <input type="text" id="dnsInput" placeholder="e.g. example.com" class="password-display">
+      <button class="btn-cyber" id="dnsLookupBtn">Lookup</button>
+    </div>
+    <div style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
+      <button class="btn-cyber mode-btn active" data-type="A">A</button>
+      <button class="btn-cyber mode-btn" data-type="AAAA">AAAA</button>
+      <button class="btn-cyber mode-btn" data-type="MX">MX</button>
+      <button class="btn-cyber mode-btn" data-type="TXT">TXT</button>
+      <button class="btn-cyber mode-btn" data-type="NS">NS</button>
+    </div>
+  </section>
+
+  <div id="dnsLoading" style="display:none;text-align:center;padding:2rem;"><div class="loader-spinner"></div></div>
+  <section class="glass-card" id="dnsResults" style="padding:1.75rem;display:none;">
+    <ul id="dnsResultList" style="list-style:none;padding:0;font-family:var(--font-mono);font-size:0.9rem;display:flex;flex-direction:column;gap:0.6rem;"></ul>
+  </section>
+  <p id="dnsError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
+</main>
+
+<script src="../js/dns-lookup.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 12</p>
+    <h1 class="glow-text tool-title">QR Code Generator</h1>
+    <p class="tool-subtitle">Turn any link or text into a scannable QR code, generated locally in your browser.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">Text or URL</p>
+    <input type="text" id="qrInput" placeholder="https://example.com" class="password-display" style="width:100%;">
+    <button class="btn-cyber" id="qrGenerateBtn" style="margin-top:1rem;">Generate QR Code</button>
+  </section>
+
+  <section class="glass-card" style="padding:2rem;text-align:center;">
+    <div id="qrCanvasWrap" style="display:flex;justify-content:center;margin-bottom:1rem;"></div>
+    <button class="btn-cyber" id="qrDownloadBtn" style="display:none;">Download PNG</button>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="../js/qr-generator.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHOIS Lookup — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 06</p>
+    <h1 class="glow-text tool-title">WHOIS Lookup</h1>
+    <p class="tool-subtitle">Domain registration details via RDAP, the modern standardized WHOIS protocol.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <div class="output-row">
+      <input type="text" id="whoisInput" placeholder="e.g. example.com" class="password-display">
+      <button class="btn-cyber" id="whoisLookupBtn">Lookup</button>
+    </div>
+  </section>
+
+  <div id="whoisLoading" style="display:none;text-align:center;padding:2rem;"><div class="loader-spinner"></div></div>
+  <section class="glass-card" id="whoisResults" style="padding:1.75rem;display:none;">
+    <div id="whoisResultGrid" style="display:flex;flex-direction:column;gap:0.8rem;font-family:var(--font-mono);font-size:0.9rem;"></div>
+  </section>
+  <p id="whoisError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
+</main>
+
+<script src="../js/whois.js"></script>
+</body>
+</html>

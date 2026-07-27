@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 &amp; Encoding Tools — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 09</p>
+    <h1 class="glow-text tool-title">Encoding / Decoding Tools</h1>
+    <p class="tool-subtitle">Base64, URL, and HTML entity encoding — all processed locally in your browser.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <div style="display:flex;gap:0.6rem;margin-bottom:1rem;flex-wrap:wrap;">
+      <button class="btn-cyber mode-btn active" data-mode="base64">Base64</button>
+      <button class="btn-cyber mode-btn" data-mode="url">URL Encode</button>
+      <button class="btn-cyber mode-btn" data-mode="html">HTML Entities</button>
+    </div>
+
+    <p class="eyebrow" style="margin-bottom:0.5rem;">Input</p>
+    <textarea id="encInput" rows="4" placeholder="Type or paste text…"
+      style="width:100%;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);padding:0.85rem;resize:vertical;margin-bottom:1rem;"></textarea>
+
+    <div style="display:flex;gap:0.6rem;">
+      <button class="btn-cyber" id="encodeBtn">Encode →</button>
+      <button class="btn-cyber" id="decodeBtn">← Decode</button>
+    </div>
+  </section>
+
+  <section class="glass-card" style="padding:1.75rem;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">Output</p>
+    <div class="output-row">
+      <input type="text" id="encOutput" readonly class="password-display" placeholder="Result appears here…">
+      <button class="btn-icon" id="copyEncBtn" title="Copy">📋</button>
+    </div>
+  </section>
+</main>
+
+<div class="toast-cyber" id="toast">Copied to clipboard</div>
+
+<script src="../js/tools.js"></script>
+<script src="../js/base64.js"></script>
+</body>
+</html>

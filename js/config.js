@@ -1,0 +1,1 @@
+const BACKEND_URL = 'https://cst-pro-backend.bonto.run';
