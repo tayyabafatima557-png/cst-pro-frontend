@@ -237,7 +237,7 @@ input[type="range"]::-webkit-slider-thumb {
 .tool-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 5rem;
+  padding: 9rem 1.5rem 5rem;   /* extra top clearance so content never sits under the fixed navbar */
   position: relative;
   z-index: 2;
 }
