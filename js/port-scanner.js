@@ -12,8 +12,16 @@
   const errorEl = document.getElementById('scanError');
   const filterOpenOnly = document.getElementById('filterOpenOnly');
 
-  const BACKEND_URL = 'http://localhost:4000/scan';
+  const SCAN_ENDPOINT = BACKEND_URL + '/scan';
   let lastResults = [];
+
+  // Remember the legal acknowledgment for this browser session only
+  if (sessionStorage.getItem('cst-scan-ack') === 'true') {
+    legalAck.checked = true;
+  }
+  legalAck.addEventListener('change', () => {
+    sessionStorage.setItem('cst-scan-ack', legalAck.checked);
+  });
 
   document.getElementById('quickCommon').addEventListener('click', () => {
     startInput.value = 1;
@@ -67,7 +75,7 @@
     scanBtn.disabled = true;
 
     try {
-      const res = await fetch(BACKEND_URL, {
+      const res = await fetch(SCAN_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ host, startPort, endPort, acknowledgedLegal: true })

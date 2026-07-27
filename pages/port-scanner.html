@@ -54,7 +54,7 @@
       <button class="btn-cyber" id="quickFull">Full Range (1–65535)</button>
     </div>
     <button class="btn-cyber" id="scanBtn" style="width:100%;">Start Scan</button>
-    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.6rem;">Larger ranges take longer — a full 1–65535 scan can take several minutes depending on target responsiveness. Backend must be running at <code>http://localhost:4000</code>.</p>
+    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.6rem;">Larger ranges take longer — a full 1–65535 scan can take several minutes depending on target responsiveness.</p>
   </section>
 
   <div id="scanLoading" style="display:none;text-align:center;padding:2rem;">
@@ -76,6 +76,7 @@
   <p id="scanError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
 </main>
 
+<script src="../js/config.js"></script>
 <script src="../js/port-scanner.js"></script>
 </body>
 </html>
