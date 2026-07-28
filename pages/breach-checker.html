@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Breach Checker — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 13</p>
+    <h1 class="glow-text tool-title">Password Breach Checker</h1>
+    <p class="tool-subtitle">Check if a password has appeared in known data breaches — using Have I Been Pwned's k-anonymity model. Your password never leaves your browser in full.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <div class="output-row">
+      <input type="password" id="breachInput" placeholder="Enter a password to check" class="password-display">
+      <button class="btn-cyber" id="breachCheckBtn">Check</button>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.6rem;">Only the first 5 characters of your password's SHA-1 hash are ever sent — the full password and full hash stay local. <a href="https://haveibeenpwned.com/Passwords" target="_blank" style="color:var(--cyan);">How k-anonymity works</a>.</p>
+  </section>
+
+  <div id="breachLoading" style="display:none;text-align:center;padding:2rem;"><div class="loader-spinner"></div></div>
+  <p id="breachError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
+
+  <section class="glass-card" id="breachResult" style="padding:1.75rem;display:none;text-align:center;">
+    <div id="breachResultContent"></div>
+  </section>
+</main>
+
+<script src="../js/breach-checker.js"></script>
+</body>
+</html>

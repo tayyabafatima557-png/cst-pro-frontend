@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Header Analyzer — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 15</p>
+    <h1 class="glow-text tool-title">Email Header Analyzer</h1>
+    <p class="tool-subtitle">Paste raw email headers to trace the delivery path, sender authenticity (SPF/DKIM/DMARC), and hop-by-hop delays. Fully offline — nothing is sent anywhere.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <textarea id="headerInput" placeholder="Paste full raw email headers here (from 'Show Original' / 'View Source' in your email client)..." style="width:100%;min-height:200px;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--cyan);font-family:var(--font-mono);font-size:0.8rem;padding:1rem;box-sizing:border-box;resize:vertical;"></textarea>
+    <button class="btn-cyber" id="analyzeHeaderBtn" style="margin-top:1rem;">Analyze</button>
+  </section>
+
+  <p id="headerError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
+
+  <section class="glass-card" id="authResults" style="padding:1.75rem;margin-bottom:1.5rem;display:none;">
+    <p class="eyebrow" style="margin-bottom:1rem;">Authentication Results</p>
+    <div id="authGrid" style="display:flex;flex-direction:column;gap:0.6rem;font-family:var(--font-mono);font-size:0.9rem;"></div>
+  </section>
+
+  <section class="glass-card" id="hopResults" style="padding:1.75rem;display:none;">
+    <p class="eyebrow" style="margin-bottom:1rem;">Delivery Path (Received Headers)</p>
+    <div id="hopList" style="display:flex;flex-direction:column;gap:0.8rem;font-family:var(--font-mono);font-size:0.8rem;"></div>
+  </section>
+</main>
+
+<script src="../js/email-header-analyzer.js"></script>
+</body>
+</html>
