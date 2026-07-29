@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSP Generator & Analyzer — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 19 · web_application_security</p>
+    <h1 class="glow-text tool-title">CSP Generator &amp; Analyzer</h1>
+    <p class="tool-subtitle">Build a Content-Security-Policy from scratch, or paste an existing one to find risky directives.</p>
+  </div>
+
+  <div style="display:flex;gap:0.6rem;margin-bottom:1.25rem;">
+    <button id="tabGenBtn" class="start-btn" style="cursor:pointer;border:none;">Generator</button>
+    <button id="tabAnaBtn" class="start-btn" style="cursor:pointer;border:none;opacity:0.55;">Analyzer</button>
+  </div>
+
+  <!-- GENERATOR -->
+  <section id="cspGenPanel">
+    <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+      <p class="eyebrow" style="margin-bottom:0.9rem;">Directives</p>
+      <div id="cspDirectiveList" style="display:grid;gap:0.9rem;"></div>
+    </section>
+
+    <section class="glass-card" style="padding:1.75rem;">
+      <p class="eyebrow" style="margin-bottom:0.6rem;">Generated Policy</p>
+      <pre id="cspOutput" style="background:var(--bg-panel-raised);border-radius:8px;padding:0.85rem;color:var(--cyan);font-family:var(--font-mono);font-size:0.85rem;overflow:auto;white-space:pre-wrap;word-break:break-all;min-height:60px;">—</pre>
+      <button id="cspCopyBtn" class="start-btn" style="cursor:pointer;border:none;margin-top:0.9rem;">Copy Header Line</button>
+    </section>
+  </section>
+
+  <!-- ANALYZER -->
+  <section id="cspAnaPanel" style="display:none;">
+    <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+      <p class="eyebrow" style="margin-bottom:0.6rem;">Paste an existing CSP</p>
+      <textarea id="cspAnaInput" rows="4" placeholder="default-src 'self'; script-src 'self' 'unsafe-inline'; ..."
+        style="width:100%;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);font-size:0.85rem;padding:0.85rem;resize:vertical;"></textarea>
+      <button id="cspAnaBtn" class="start-btn" style="cursor:pointer;border:none;margin-top:0.9rem;">Analyze →</button>
+    </section>
+    <section class="glass-card" style="padding:0;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-family:var(--font-mono);font-size:0.85rem;">
+        <thead>
+          <tr style="text-align:left;border-bottom:1px solid var(--border-glow);">
+            <th style="padding:0.85rem 1rem;">Severity</th>
+            <th style="padding:0.85rem 1rem;">Finding</th>
+          </tr>
+        </thead>
+        <tbody id="cspAnaResults"></tbody>
+      </table>
+    </section>
+  </section>
+</main>
+
+<script src="../js/csp-tool.js"></script>
+</body>
+</html>

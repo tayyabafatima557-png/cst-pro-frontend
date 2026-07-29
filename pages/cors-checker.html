@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORS Checker — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 21 · web_application_security</p>
+    <h1 class="glow-text tool-title">CORS Checker</h1>
+    <p class="tool-subtitle">Inspect a target's Cross-Origin Resource Sharing headers for overly permissive configuration.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">Target URL</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <input id="corsUrl" type="text" placeholder="https://api.example.com/endpoint"
+        style="flex:1;min-width:220px;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);font-size:0.9rem;padding:0.75rem 0.9rem;">
+      <button id="corsBtn" class="start-btn" style="cursor:pointer;border:none;">Check →</button>
+    </div>
+    <p id="corsStatus" style="margin-top:0.9rem;font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim);"></p>
+  </section>
+
+  <section id="corsResults" style="display:none;">
+    <div class="glass-card" style="padding:1.5rem;margin-bottom:1.25rem;">
+      <p class="eyebrow" style="margin-bottom:0.4rem;">Verdict</p>
+      <h2 id="corsVerdict" style="font-family:var(--font-mono);font-size:1.5rem;margin:0;">—</h2>
+    </div>
+    <div class="glass-card" style="padding:0;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-family:var(--font-mono);font-size:0.85rem;">
+        <thead>
+          <tr style="text-align:left;border-bottom:1px solid var(--border-glow);">
+            <th style="padding:0.85rem 1rem;">Header</th>
+            <th style="padding:0.85rem 1rem;">Value</th>
+            <th style="padding:0.85rem 1rem;">Note</th>
+          </tr>
+        </thead>
+        <tbody id="corsTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="../js/cors-checker.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Security Analyzer — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 22 · secure_web_development</p>
+    <h1 class="glow-text tool-title">Cookie Security Analyzer</h1>
+    <p class="tool-subtitle">Paste a Set-Cookie header value to check for the Secure, HttpOnly and SameSite flags.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <p class="eyebrow" style="margin-bottom:0.6rem;">Set-Cookie value</p>
+    <textarea id="cookieInput" rows="3" placeholder="sessionId=abc123; Path=/; Expires=Wed, 01 Jan 2027 00:00:00 GMT"
+      style="width:100%;background:var(--bg-panel-raised);border:1px solid var(--border-glow);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);font-size:0.85rem;padding:0.85rem;resize:vertical;"></textarea>
+    <button id="cookieBtn" class="start-btn" style="cursor:pointer;border:none;margin-top:0.9rem;">Analyze →</button>
+    <p style="margin-top:0.7rem;color:var(--text-dim);font-size:0.78rem;">Tip: open your browser's DevTools → Network tab → click a request → Response Headers → copy the Set-Cookie value.</p>
+  </section>
+
+  <section id="cookieResults" style="display:none;">
+    <div class="glass-card" style="padding:1.5rem;margin-bottom:1.25rem;">
+      <p class="eyebrow" style="margin-bottom:0.4rem;">Grade</p>
+      <h2 id="cookieGrade" style="font-family:var(--font-mono);font-size:2.2rem;margin:0;">—</h2>
+    </div>
+    <div class="glass-card" style="padding:0;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-family:var(--font-mono);font-size:0.85rem;">
+        <thead>
+          <tr style="text-align:left;border-bottom:1px solid var(--border-glow);">
+            <th style="padding:0.85rem 1rem;">Attribute</th>
+            <th style="padding:0.85rem 1rem;">Status</th>
+            <th style="padding:0.85rem 1rem;">Why it matters</th>
+          </tr>
+        </thead>
+        <tbody id="cookieTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="../js/cookie-analyzer.js"></script>
+</body>
+</html>
