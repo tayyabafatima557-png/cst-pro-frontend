@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXIF / Metadata Viewer — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 26</p>
+    <h1 class="glow-text tool-title">EXIF / Metadata Viewer</h1>
+    <p class="tool-subtitle">Extract hidden metadata from images — camera model, GPS location, timestamps. A classic OSINT technique. Nothing is uploaded anywhere.</p>
+  </div>
+
+  <section class="glass-card" style="padding:2rem;margin-bottom:1.5rem;text-align:center;">
+    <input type="file" id="exifFileInput" accept="image/*" style="display:none;">
+    <button class="btn-cyber" id="exifSelectBtn">Choose Image</button>
+    <p id="exifFileName" style="color:var(--text-dim);margin-top:1rem;font-size:0.85rem;"></p>
+  </section>
+
+  <section class="glass-card" id="exifResults" style="padding:1.75rem;display:none;">
+    <div id="exifGrid" style="display:flex;flex-direction:column;gap:0.6rem;font-family:var(--font-mono);font-size:0.85rem;"></div>
+    <div id="exifGpsLink" style="margin-top:1rem;"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+<script src="../js/exif-viewer.js"></script>
+</body>
+</html>

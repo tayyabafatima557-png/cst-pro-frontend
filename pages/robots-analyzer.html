@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robots.txt & Sitemap Analyzer — Cyber Security Toolkit Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/toolkit-theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="scanline-overlay"></div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-brand"><span class="glow-text">CST</span><span>_Pro</span></a>
+  <a href="../index.html#tools" class="nav-back">&larr; All Tools</a>
+</nav>
+<main class="tool-page">
+  <div class="tool-header">
+    <p class="eyebrow">// tool_id: 22</p>
+    <h1 class="glow-text tool-title">Robots.txt &amp; Sitemap Analyzer</h1>
+    <p class="tool-subtitle">Fetch and inspect a site's robots.txt and sitemap.xml — often reveals hidden paths, admin panels, or the full site structure.</p>
+  </div>
+
+  <section class="glass-card" style="padding:1.75rem;margin-bottom:1.5rem;">
+    <div class="output-row">
+      <input type="text" id="robotsInput" placeholder="e.g. example.com" class="password-display">
+      <button class="btn-cyber" id="robotsCheckBtn">Analyze</button>
+    </div>
+  </section>
+
+  <div id="robotsLoading" style="display:none;text-align:center;padding:2rem;"><div class="loader-spinner"></div></div>
+  <p id="robotsError" style="color:var(--danger);text-align:center;margin-top:1rem;"></p>
+
+  <section class="glass-card" id="robotsResults" style="padding:1.75rem;margin-bottom:1.5rem;display:none;">
+    <p class="eyebrow" style="margin-bottom:1rem;">robots.txt</p>
+    <pre id="robotsContent" style="white-space:pre-wrap;word-break:break-all;font-family:var(--font-mono);font-size:0.8rem;color:var(--cyan);background:var(--bg-panel-raised);border-radius:8px;padding:1rem;max-height:300px;overflow-y:auto;"></pre>
+    <div id="robotsDisallowed" style="margin-top:1rem;"></div>
+  </section>
+
+  <section class="glass-card" id="sitemapResults" style="padding:1.75rem;display:none;">
+    <p class="eyebrow" style="margin-bottom:1rem;" id="sitemapCount">sitemap.xml</p>
+    <div id="sitemapList" style="display:flex;flex-direction:column;gap:0.4rem;font-family:var(--font-mono);font-size:0.8rem;max-height:400px;overflow-y:auto;"></div>
+  </section>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/robots-analyzer.js"></script>
+</body>
+</html>
