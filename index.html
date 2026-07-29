@@ -19,37 +19,35 @@
     <script src="https://kit.fontawesome.com/6d2ea823d0.js" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
+
 <div class="background">
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
-</div>
-    <nav class="navbar">
-
-<div class="logo">
-🛡 Cyber Security Toolkit Pro
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 
-<ul>
+<!-- ================= NAVBAR ================= -->
 
-<li><a href="#">Home</a></li>
+<nav class="navbar">
 
-<li><a href="#tools">Tools</a></li>
+    <div class="logo">
+        🛡 Cyber Security Toolkit Pro
+    </div>
 
-<li><a href="#">About</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#tools">Toolkit</a></li>
+        <li><a href="#developer">Developer</a></li>
+        <li><a href="#footer">Contact</a></li>
+    </ul>
 
 </nav>
+
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
@@ -59,29 +57,64 @@
 🛡
 </div>
 
-<h3>WELCOME TO</h3>
+<p class="eyebrow">// Enterprise Security Utilities</p>
 
-<h1>Cyber Security Toolkit Pro</h1>
+<h1 class="glow-text">
+Cyber Security Toolkit Pro
+</h1>
 
-<h2>Developed By Tayyaba Fatima</h2>
+<h2>
+Professional Security Assessment Platform
+</h2>
 
 <p>
 
-A collection of modern Cyber Security tools for
-Students, Ethical Hackers, Developers and Security Researchers.
+A modern collection of Web Security, Network Security,
+Reconnaissance, Cryptography and Utility tools designed
+for students, ethical hackers, penetration testers,
+developers and security researchers.
 
 </p>
 
+<div class="hero-buttons">
+
 <a href="#tools" class="start-btn">
-
 Explore Toolkit →
+</a>
 
+<a href="#developer" class="start-btn secondary-btn">
+About Developer
 </a>
 
 </div>
 
-</header>
+<div class="hero-stats">
 
+<div class="hero-stat">
+<h3>27+</h3>
+<span>Security Tools</span>
+</div>
+
+<div class="hero-stat">
+<h3>5</h3>
+<span>Categories</span>
+</div>
+
+<div class="hero-stat">
+<h3>100%</h3>
+<span>Free</span>
+</div>
+
+<div class="hero-stat">
+<h3>24/7</h3>
+<span>Available</span>
+</div>
+
+</div>
+
+</div>
+
+</header>
 <section class="about">
 
 <h2>
@@ -101,164 +134,126 @@ Encoding Utilities, Web Security Tools and much more.
 <section id="tools">
 
 <h2 class="section-title">
-Cyber Security Tools
+Cyber Security Toolkit
 </h2>
 
-<style>
-  .category-block { margin-bottom: 3rem; }
-  .category-heading {
-    color: var(--cyan);
-    font-family: var(--font-mono, monospace);
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border-glow, #1e2a3a);
-  }
-  .category-block .tool-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-    gap: 1.25rem !important;
-    border: 1px solid var(--border-glow, #1e2a3a);
-    border-radius: 16px;
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.015);
-  }
-  @media (max-width: 640px) {
-    .category-block .tool-grid { grid-template-columns: 1fr !important; }
-  }
-</style>
+<p class="section-subtitle">
+Professional Security Utilities organized by category.
+</p>
 
-<!-- WEB APPLICATION SECURITY -->
-<div class="category-block">
-  <h3 class="category-heading">🌐 Web Application Security</h3>
-  <div class="tool-grid">
+<!-- ================= WEB SECURITY ================= -->
 
-    <a href="pages/ssl-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔒</div><h3>SSL Checker</h3><p>Inspect SSL certificate information.</p>
-    </a>
-    <a href="pages/jwt-decoder.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔐</div><h3>JWT Decoder</h3><p>Decode and inspect JWT Tokens.</p>
-    </a>
-    <a href="pages/email-header-analyzer.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📧</div><h3>Email Header Analyzer</h3><p>Trace an email's delivery path and verify SPF/DKIM/DMARC authentication.</p>
-    </a>
-    <a href="pages/security-headers-scanner.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🧾</div><h3>Security Headers Scanner</h3><p>Check a site's HTTP security headers and get a letter grade.</p>
-    </a>
-    <a href="pages/csp-tool.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🧱</div><h3>CSP Generator &amp; Analyzer</h3><p>Build a Content-Security-Policy or analyze an existing one for weaknesses.</p>
-    </a>
-    <a href="pages/cors-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔀</div><h3>CORS Checker</h3><p>Inspect Access-Control headers for overly permissive cross-origin configuration.</p>
-    </a>
-    <a href="pages/robots-analyzer.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🤖</div><h3>Robots.txt &amp; Sitemap Analyzer</h3><p>Fetch and inspect a site's robots.txt and sitemap.xml for hidden paths.</p>
-    </a>
+<div class="tool-category">
 
-  </div>
+<div class="category-title">
+🌐 Web Application Security
 </div>
 
-<!-- NETWORK SECURITY -->
-<div class="category-block">
-  <h3 class="category-heading">📡 Network Security</h3>
-  <div class="tool-grid">
+<div class="dashboard-grid">
 
-    <a href="pages/whois.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🌐</div><h3>WHOIS Lookup</h3><p>Retrieve domain registration information.</p>
-    </a>
-    <a href="pages/dns-lookup.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📡</div><h3>DNS Lookup</h3><p>View DNS records of any domain.</p>
-    </a>
-    <a href="pages/ip-lookup.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📍</div><h3>IP Lookup</h3><p>Locate IP addresses and network details.</p>
-    </a>
-    <a href="pages/port-scanner.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">⚙</div><h3>Port Scanner</h3><p>Scan localhost or private network ports (advanced — Node.js backend required).</p>
-    </a>
-    <a href="pages/port-service-lookup.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔢</div><h3>Port-to-Service Lookup</h3><p>Look up what service typically runs on a given port number.</p>
-    </a>
+<!-- SSL -->
 
-  </div>
+<a href="pages/ssl-checker.html" class="dashboard-card">
+<div class="tool-number">01</div>
+<div class="tool-name">SSL Checker</div>
+<p>Inspect TLS Certificates</p>
+</a>
+
+<!-- JWT -->
+
+<a href="pages/jwt-decoder.html" class="dashboard-card">
+<div class="tool-number">02</div>
+<div class="tool-name">JWT Decoder</div>
+<p>Decode JWT Tokens</p>
+</a>
+
+<!-- Email -->
+
+<a href="pages/email-header-analyzer.html" class="dashboard-card">
+<div class="tool-number">03</div>
+<div class="tool-name">Email Analyzer</div>
+<p>Trace Email Headers</p>
+</a>
+
+<!-- Headers -->
+
+<a href="pages/security-headers-scanner.html" class="dashboard-card">
+<div class="tool-number">04</div>
+<div class="tool-name">Security Headers</div>
+<p>Scan HTTP Headers</p>
+</a>
+
+<!-- CSP -->
+
+<a href="pages/csp-tool.html" class="dashboard-card">
+<div class="tool-number">05</div>
+<div class="tool-name">CSP Generator</div>
+<p>Create Secure Policies</p>
+</a>
+
+<!-- CORS -->
+
+<a href="pages/cors-checker.html" class="dashboard-card">
+<div class="tool-number">06</div>
+<div class="tool-name">CORS Checker</div>
+<p>Analyze Cross-Origin Policies</p>
+</a>
+
+<!-- Robots -->
+
+<a href="pages/robots-analyzer.html" class="dashboard-card">
+<div class="tool-number">07</div>
+<div class="tool-name">Robots Analyzer</div>
+<p>Inspect Robots.txt</p>
+</a>
+
 </div>
 
-<!-- PENETRATION TESTING -->
-<div class="category-block">
-  <h3 class="category-heading">🕵️ Penetration Testing</h3>
-  <div class="tool-grid">
-
-    <a href="pages/subdomain-finder.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🌐</div><h3>Subdomain Finder</h3><p>Discover subdomains via public Certificate Transparency logs.</p>
-    </a>
-    <a href="pages/cve-lookup.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🛡️</div><h3>CVE Lookup</h3><p>Search known vulnerabilities by ID or keyword — live data from NIST's vulnerability database.</p>
-    </a>
-    <a href="pages/typosquatting-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🎭</div><h3>Typosquatting Checker</h3><p>Find registered lookalike domains that could be used for phishing.</p>
-    </a>
-    <a href="pages/clickjacking-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🖼️</div><h3>Clickjacking Checker</h3><p>Test if a site can be embedded in an iframe and used for UI-redress attacks.</p>
-    </a>
-    <a href="pages/url-reputation.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔍</div><h3>URL Reputation Checker</h3><p>Search historical public scans of a URL via urlscan.io.</p>
-    </a>
-
-  </div>
 </div>
 
-<!-- SECURE WEB DEVELOPMENT -->
-<div class="category-block">
-  <h3 class="category-heading">🔧 Secure Web Development</h3>
-  <div class="tool-grid">
+<!-- ================= NETWORK ================= -->
 
-    <a href="pages/password-generator.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔑</div><h3>Password Generator</h3><p>Generate strong and secure passwords instantly.</p>
-    </a>
-    <a href="pages/password-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🛡</div><h3>Password Strength Checker</h3><p>Analyze password security and strength.</p>
-    </a>
-    <a href="pages/breach-checker.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔓</div><h3>Password Breach Checker</h3><p>Check if a password has appeared in known data breaches, using privacy-safe k-anonymity.</p>
-    </a>
-    <a href="pages/cookie-analyzer.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🍪</div><h3>Cookie Security Analyzer</h3><p>Check Set-Cookie values for Secure, HttpOnly and SameSite flags.</p>
-    </a>
+<div class="tool-category">
 
-  </div>
+<div class="category-title">
+📡 Network Security
 </div>
 
-<!-- SECURITY TOOL DEVELOPMENT -->
-<div class="category-block">
-  <h3 class="category-heading">🛠️ Security Tool Development</h3>
-  <div class="tool-grid">
+<div class="dashboard-grid">
 
-    <a href="pages/hash-generator.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">#️⃣</div><h3>Hash Generator</h3><p>Create MD5, SHA1 and SHA256 hashes.</p>
-    </a>
-    <a href="pages/json-formatter.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📄</div><h3>JSON Formatter</h3><p>Beautify and validate JSON instantly.</p>
-    </a>
-    <a href="pages/base64.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🔄</div><h3>Base64 Encoder</h3><p>Encode and decode Base64 text easily.</p>
-    </a>
-    <a href="pages/qr-generator.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📱</div><h3>QR Generator</h3><p>Create QR Codes for text and links.</p>
-    </a>
-    <a href="pages/zero-width-detector.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">👻</div><h3>Zero-Width Character Detector</h3><p>Detect invisible Unicode characters hidden in text for steganography or tracking.</p>
-    </a>
-    <a href="pages/file-hash-generator.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">🗂️</div><h3>File Hash Generator</h3><p>Generate SHA-1/256/512 hashes of any file to verify integrity.</p>
-    </a>
-    <a href="pages/exif-viewer.html" class="tool-card" style="text-decoration:none;color:inherit;">
-      <div class="tool-icon">📷</div><h3>EXIF / Metadata Viewer</h3><p>Extract hidden metadata from images — camera info, GPS location, timestamps.</p>
-    </a>
+<a href="pages/ip-lookup.html" class="dashboard-card">
+<div class="tool-number">01</div>
+<div class="tool-name">IP Lookup</div>
+<p>Geolocation & Details</p>
+</a>
 
-  </div>
+<a href="pages/whois.html" class="dashboard-card">
+<div class="tool-number">02</div>
+<div class="tool-name">WHOIS Lookup</div>
+<p>Domain Information</p>
+</a>
+
+<a href="pages/dns-lookup.html" class="dashboard-card">
+<div class="tool-number">03</div>
+<div class="tool-name">DNS Lookup</div>
+<p>View DNS Records</p>
+</a>
+
+<a href="pages/port-scanner.html" class="dashboard-card">
+<div class="tool-number">04</div>
+<div class="tool-name">Port Scanner</div>
+<p>Scan Open Ports</p>
+</a>
+
+<a href="pages/port-service-lookup.html" class="dashboard-card">
+<div class="tool-number">05</div>
+<div class="tool-name">Port Services</div>
+<p>Known Port Database</p>
+</a>
+
 </div>
 
-</section>
+</div>
 <section class="stats">
 
 <div class="stat-card">

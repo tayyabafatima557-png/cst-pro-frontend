@@ -149,12 +149,9 @@ app.get('/tls-info', (req, res) => {
 });
 
 /* ============================================
-   SECURITY HEADERS + REDIRECT CHAIN + CORS HEADERS
+   SECURITY HEADERS + REDIRECT CHAIN
    Server-side fetch bypasses CORS restrictions that
    block reading these headers from browser JS directly.
-
-   Used by: Security Headers Scanner, Clickjacking Checker,
-   and CORS Checker tools on the frontend.
    ============================================ */
 app.get('/security-headers', async (req, res) => {
   let target = req.query.url || '';
@@ -186,7 +183,6 @@ app.get('/security-headers', async (req, res) => {
     }
 
     const headers = Object.fromEntries(finalResponse.headers.entries());
-
     const securityHeaders = {
       'strict-transport-security': headers['strict-transport-security'] || null,
       'content-security-policy': headers['content-security-policy'] || null,
@@ -196,13 +192,10 @@ app.get('/security-headers', async (req, res) => {
       'permissions-policy': headers['permissions-policy'] || null
     };
 
-    // Added for the CORS Checker tool
     const corsHeaders = {
       'access-control-allow-origin': headers['access-control-allow-origin'] || null,
       'access-control-allow-credentials': headers['access-control-allow-credentials'] || null,
-      'access-control-allow-methods': headers['access-control-allow-methods'] || null,
-      'access-control-allow-headers': headers['access-control-allow-headers'] || null,
-      'access-control-expose-headers': headers['access-control-expose-headers'] || null
+      'access-control-allow-methods': headers['access-control-allow-methods'] || null
     };
 
     res.json({
@@ -216,6 +209,55 @@ app.get('/security-headers', async (req, res) => {
     });
   } catch (err) {
     res.status(502).json({ error: 'Request failed: ' + err.message });
+  }
+});
+
+/* ============================================
+   ROBOTS.TXT / SECURITY.TXT FETCHER
+   Server-side fetch bypasses CORS (these files
+   rarely send CORS headers for browser JS to read).
+   ============================================ */
+app.get('/site-files', async (req, res) => {
+  let domain = req.query.domain || '';
+  if (!domain) return res.status(400).json({ error: 'domain query param required' });
+  domain = domain.replace(/^https?:\/\//i, '').split('/')[0];
+  const base = `https://${domain}`;
+
+  async function fetchFile(path) {
+    try {
+      const r = await fetch(base + path, { redirect: 'follow' });
+      if (!r.ok) return { found: false, status: r.status };
+      const text = await r.text();
+      return { found: true, status: r.status, content: text.slice(0, 5000) };
+    } catch (err) {
+      return { found: false, error: err.message };
+    }
+  }
+
+  const [robots, security] = await Promise.all([
+    fetchFile('/robots.txt'),
+    fetchFile('/.well-known/security.txt')
+  ]);
+
+  res.json({ domain, robots, security });
+});
+
+/* ============================================
+   GENERIC TEXT FETCH
+   Used by Robots.txt/Sitemap Analyzer — fetches
+   plain text files server-side to bypass CORS.
+   ============================================ */
+app.get('/fetch-text', async (req, res) => {
+  let target = req.query.url || '';
+  if (!target) return res.status(400).json({ error: 'url query param required' });
+  if (!/^https?:\/\//i.test(target)) target = 'https://' + target;
+
+  try {
+    const response = await fetch(target, { redirect: 'follow' });
+    const text = await response.text();
+    res.json({ status: response.status, url: target, text: text.slice(0, 50000) });
+  } catch (err) {
+    res.status(502).json({ error: 'Could not fetch: ' + err.message });
   }
 });
 
